@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZ Plumbing Inc. | 24 Hour Plumbing & Heating — Edmonton, AB</title>
-<meta name="description" content="EZ Plumbing Inc. — 24 Hour Service. Hot water tanks, sump pumps, drains, and emergency plumbing in Edmonton & surrounding areas. Call (780) 800-1001.">
+<title>BlueLine Plumbing & Heating | 24 Hour Plumbing — Edmonton, AB</title>
+<meta name="description" content="BlueLine Plumbing & Heating — 24 Hour Service. Hot water tanks, sump pumps, drains, and emergency plumbing in Edmonton & surrounding areas. Call (825) 419-5570.">
 <style>
   :root{
-    --blue:#1d4ed8;       /* main accent */
-    --blue-dark:#1737a0;
-    --navy:#16243d;       /* logo / heading color */
-    --ink:#2a3450;
+    --blue:#0d3b8f;       /* DEEP blue accent */
+    --blue-dark:#082a6b;
+    --blue-deep:#062052;  /* darkest blue */
+    --navy:#0a1f3d;
+    --ink:#233049;
     --grey:#5b6478;
-    --light:#f4f6fb;
+    --light:#eef2fa;
     --white:#ffffff;
-    --line:#e5e9f2;
-    --red:#d42a2a;        /* used ONLY for the logo dash */
+    --line:#dde4f2;
+    --sky:#9db9ff;        /* light blue for highlights on dark */
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -24,22 +25,22 @@
   a{text-decoration:none;color:inherit;}
   .container{width:min(1140px,92%);margin:0 auto;}
 
-  /* ===== LOGO (matches their EZ PLUMBING badge) ===== */
+  /* ===== LOGO ===== */
   .logo{display:flex;align-items:center;gap:12px;}
   .logo svg{width:58px;height:58px;flex-shrink:0;}
   .logo-text .name{font-weight:900;font-size:1.25rem;color:var(--navy);line-height:1.1;}
   .logo-text .tag{font-size:.72rem;color:var(--blue);font-weight:700;letter-spacing:.5px;}
 
   /* ===== TOP BAR ===== */
-  .topbar{background:var(--blue);color:#fff;font-size:.85rem;padding:8px 0;}
+  .topbar{background:var(--blue-deep);color:#fff;font-size:.85rem;padding:8px 0;}
   .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
-  .topbar b{color:#ffd97a;}
+  .topbar b{color:#8fb4ff;}
   .topbar a{font-weight:700;color:#fff;text-decoration:underline;}
 
   /* ===== NAV ===== */
   header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);border-bottom:3px solid var(--blue);}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
-  nav ul{display:flex;gap:26px;list-style:none;}
+  nav ul{display:flex;gap:24px;list-style:none;}
   nav a{font-weight:600;font-size:.95rem;color:var(--navy);position:relative;padding:6px 0;}
   nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--blue);transition:width .25s;}
   nav a:hover::after{width:100%;}
@@ -48,33 +49,30 @@
   .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
   .burger span{display:block;width:26px;height:3px;background:var(--blue);margin:5px 0;border-radius:3px;}
 
-  /* ===== HERO (white main — NO review mentions up here anymore) ===== */
-  .hero{background:
-        radial-gradient(circle at 88% 15%, rgba(29,78,216,.08) 0 28%, transparent 29%),
-        radial-gradient(circle at 8% 85%, rgba(29,78,216,.07) 0 24%, transparent 25%),
-        #fff;
+  /* ===== HERO — DEEP BLUE ===== */
+  .hero{background:linear-gradient(140deg,var(--blue-deep) 0%,var(--blue-dark) 45%,var(--blue) 100%);color:#fff;
         padding:90px 0 110px;position:relative;overflow:hidden;}
-  .hero::after{content:"24 HRS";position:absolute;right:-25px;bottom:-45px;font-size:13rem;font-weight:900;color:rgba(29,78,216,.06);letter-spacing:-8px;}
+  .hero::after{content:"24 HRS";position:absolute;right:-25px;bottom:-45px;font-size:13rem;font-weight:900;color:rgba(255,255,255,.05);letter-spacing:-8px;}
   .hero .container{position:relative;z-index:2;}
-  .hero-badge{display:inline-block;background:var(--blue);color:#fff;padding:8px 18px;border-radius:30px;font-weight:800;font-size:.85rem;letter-spacing:1px;margin-bottom:18px;}
-  .hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.15;max-width:760px;color:var(--navy);}
-  .hero h1 span{color:var(--blue);}
-  .hero p{margin:18px 0 30px;max-width:620px;font-size:1.1rem;color:var(--grey);}
+  .hero-badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;padding:8px 18px;border-radius:30px;font-weight:800;font-size:.85rem;letter-spacing:1px;margin-bottom:18px;}
+  .hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.15;max-width:760px;color:#fff;}
+  .hero h1 span{color:var(--sky);}
+  .hero p{margin:18px 0 30px;max-width:620px;font-size:1.1rem;color:#d6e1fa;}
   .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
   .btn{display:inline-block;padding:15px 32px;border-radius:8px;font-weight:800;font-size:1rem;transition:.25s;cursor:pointer;border:none;}
-  .btn-blue{background:var(--blue);color:#fff;}
-  .btn-blue:hover{background:var(--blue-dark);transform:translateY(-3px);box-shadow:0 8px 20px rgba(29,78,216,.35);}
-  .btn-outline{border:2px solid var(--blue);color:var(--blue);background:transparent;}
-  .btn-outline:hover{background:var(--blue);color:#fff;}
+  .btn-blue{background:#fff;color:var(--blue-dark);}
+  .btn-blue:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.3);}
+  .btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;background:transparent;}
+  .btn-outline:hover{background:#fff;color:var(--blue-dark);}
   .hero-stats{display:flex;gap:40px;margin-top:44px;flex-wrap:wrap;}
-  .stat b{display:block;font-size:1.9rem;color:var(--blue);}
-  .stat span{font-size:.85rem;color:var(--grey);}
+  .stat b{display:block;font-size:1.9rem;color:var(--sky);}
+  .stat span{font-size:.85rem;color:#c3d2f2;}
 
   /* ===== TRUST BAR ===== */
   .trustbar{background:var(--light);padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .trustbar .container{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;}
   .trust-item{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy);}
-  .trust-item .ico{width:44px;height:44px;border-radius:50%;background:#e3ebfb;color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+  .trust-item .ico{width:44px;height:44px;border-radius:50%;background:#dfe8fb;color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
 
   /* ===== SECTIONS ===== */
   section{padding:80px 0;}
@@ -86,22 +84,22 @@
   /* SERVICES */
   .services{background:#fff;}
   .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;}
-  .card{background:#fff;border-radius:14px;padding:32px;box-shadow:0 4px 16px rgba(22,36,61,.08);transition:.25s;border:1px solid var(--line);border-top:4px solid var(--blue);}
-  .card:hover{transform:translateY(-8px);box-shadow:0 14px 30px rgba(22,36,61,.14);}
+  .card{background:#fff;border-radius:14px;padding:32px;box-shadow:0 4px 16px rgba(10,31,61,.08);transition:.25s;border:1px solid var(--line);border-top:4px solid var(--blue);}
+  .card:hover{transform:translateY(-8px);box-shadow:0 14px 30px rgba(10,31,61,.15);}
   .card .ico{width:62px;height:62px;border-radius:14px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin-bottom:18px;}
   .card h3{color:var(--navy);margin-bottom:10px;font-size:1.2rem;}
   .card p{color:var(--grey);font-size:.95rem;}
 
-  /* EMERGENCY (blue band) */
-  .emergency{background:var(--blue);color:#fff;text-align:center;padding:64px 0;}
+  /* EMERGENCY — DEEP BLUE BAND */
+  .emergency{background:linear-gradient(120deg,var(--blue-deep),var(--blue-dark));color:#fff;text-align:center;padding:64px 0;}
   .emergency h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:900;margin-bottom:10px;}
-  .emergency .btn{background:#fff;color:var(--blue);margin-top:22px;}
-  .emergency .btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.25);}
+  .emergency .btn{background:#fff;color:var(--blue-dark);margin-top:22px;}
+  .emergency .btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.3);}
 
   /* ABOUT */
   .about{background:var(--light);}
   .about-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center;}
-  .about-img{border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(22,36,61,.18);background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);height:400px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:1.4rem;text-align:center;padding:20px;}
+  .about-img{border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(10,31,61,.22);background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);height:400px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:1.4rem;text-align:center;padding:20px;}
   .checklist{list-style:none;margin-top:22px;}
   .checklist li{padding:10px 0 10px 36px;position:relative;font-weight:600;color:var(--ink);}
   .checklist li::before{content:"✔";position:absolute;left:0;color:var(--blue);font-weight:900;}
@@ -111,21 +109,21 @@
   .gal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;}
   .gal-item{height:220px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;text-align:center;padding:16px;font-size:.95rem;transition:.3s;cursor:pointer;}
   .gal-item:hover{transform:scale(1.03);}
-  .g1{background:linear-gradient(135deg,#1d4ed8,#1737a0);}
-  .g2{background:linear-gradient(135deg,#1d4ed8,#16243d);}
-  .g3{background:linear-gradient(135deg,#1737a0,#1d4ed8);}
-  .g4{background:linear-gradient(135deg,#16243d,#0e1729);}
+  .g1{background:linear-gradient(135deg,var(--blue),var(--blue-dark));}
+  .g2{background:linear-gradient(135deg,var(--blue-dark),var(--blue-deep));}
+  .g3{background:linear-gradient(135deg,var(--blue-deep),var(--blue));}
+  .g4{background:linear-gradient(135deg,#122b52,#0a1f3d);}
 
   /* CONTACT */
   .contact{background:var(--light);}
   .contact-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;}
-  .info-box{background:#fff;border-radius:14px;padding:30px;box-shadow:0 4px 16px rgba(22,36,61,.08);margin-bottom:18px;display:flex;gap:16px;align-items:flex-start;border:1px solid var(--line);}
+  .info-box{background:#fff;border-radius:14px;padding:30px;box-shadow:0 4px 16px rgba(10,31,61,.08);margin-bottom:18px;display:flex;gap:16px;align-items:flex-start;border:1px solid var(--line);}
   .info-box .ico{min-width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
   .info-box b{color:var(--navy);display:block;margin-bottom:4px;}
-  form{background:#fff;border-radius:14px;padding:34px;box-shadow:0 4px 16px rgba(22,36,61,.08);border:1px solid var(--line);}
+  form{background:#fff;border-radius:14px;padding:34px;box-shadow:0 4px 16px rgba(10,31,61,.08);border:1px solid var(--line);}
   .field{margin-bottom:16px;}
   .field label{font-weight:700;font-size:.85rem;color:var(--navy);display:block;margin-bottom:6px;}
-  .field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1.5px solid #d3daea;border-radius:8px;font-size:.95rem;font-family:inherit;outline:none;transition:border .2s;}
+  .field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1.5px solid #cfd9ec;border-radius:8px;font-size:.95rem;font-family:inherit;outline:none;transition:border .2s;}
   .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);}
   .field textarea{resize:vertical;min-height:110px;}
   .form-msg{margin-top:14px;padding:12px;border-radius:8px;font-weight:700;display:none;}
@@ -137,7 +135,7 @@
   /* MAP */
   .map{height:340px;border:0;width:100%;border-radius:12px;filter:grayscale(15%);}
 
-  /* REVIEWS — ONLY SECTION AT THE BOTTOM, nothing about reviews above */
+  /* REVIEWS — ONLY AT THE BOTTOM */
   .reviews{background:#fff;border-top:4px solid var(--blue);}
   .rating-hero{text-align:center;margin-bottom:44px;}
   .rating-hero .big{font-size:3.4rem;font-weight:900;color:var(--blue);}
@@ -148,17 +146,19 @@
   .rev .who span{font-size:.78rem;color:var(--grey);}
 
   /* FOOTER */
-  footer{background:#fff;border-top:4px solid var(--blue);color:var(--grey);padding:56px 0 0;}
+  footer{background:var(--blue-deep);color:#b9c7e8;padding:56px 0 0;}
   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:36px;padding-bottom:40px;}
-  footer h4{color:var(--blue);margin-bottom:16px;font-size:1rem;text-transform:uppercase;letter-spacing:1px;}
+  footer h4{color:#8fb4ff;margin-bottom:16px;font-size:1rem;text-transform:uppercase;letter-spacing:1px;}
   footer ul{list-style:none;}
   footer li{margin-bottom:10px;}
-  footer a:hover{color:var(--blue);}
-  .foot-bottom{background:var(--blue);color:#fff;text-align:center;padding:16px 0;font-size:.85rem;}
+  footer a:hover{color:#fff;}
+  footer .logo-text .name{color:#fff;}
+  footer .logo-text .tag{color:#8fb4ff;}
+  .foot-bottom{background:var(--blue-dark);color:#fff;text-align:center;padding:16px 0;font-size:.85rem;}
 
   /* FLOATING CALL */
-  .float-call{position:fixed;bottom:22px;right:22px;z-index:1200;background:var(--blue);color:#fff;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 8px 22px rgba(29,78,216,.5);animation:pulse 2s infinite;}
-  @keyframes pulse{0%{box-shadow:0 8px 22px rgba(29,78,216,.5),0 0 0 0 rgba(29,78,216,.4);}70%{box-shadow:0 8px 22px rgba(29,78,216,.5),0 0 0 18px rgba(29,78,216,0);}100%{box-shadow:0 8px 22px rgba(29,78,216,.5),0 0 0 0 rgba(29,78,216,0);}}
+  .float-call{position:fixed;bottom:22px;right:22px;z-index:1200;background:var(--blue);color:#fff;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 8px 22px rgba(13,59,143,.55);animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 8px 22px rgba(13,59,143,.55),0 0 0 0 rgba(13,59,143,.45);}70%{box-shadow:0 8px 22px rgba(13,59,143,.55),0 0 0 18px rgba(13,59,143,0);}100%{box-shadow:0 8px 22px rgba(13,59,143,.55),0 0 0 0 rgba(13,59,143,0);}}
 
   /* REVEAL ANIMATION */
   .reveal{opacity:0;transform:translateY(34px);transition:.7s ease;}
@@ -183,14 +183,13 @@
 </head>
 <body>
 
-<!-- ===== LOGO SVG — matches their real badge: navy EZ + red dash over the E + PLUMBING below ===== -->
+<!-- ===== NEW LOGO — deep blue droplet + BLUELINE badge ===== -->
 <svg style="display:none">
-  <symbol id="ezlogo" viewBox="0 0 120 120">
-    <circle cx="60" cy="60" r="55" fill="#ffffff" stroke="#16243d" stroke-width="4"/>
-    <!-- red dash over the E -->
-    <rect x="30" y="30" width="26" height="8" rx="1" fill="#d42a2a"/>
-    <text x="62" y="72" text-anchor="middle" font-family="Arial Black, Arial" font-weight="900" font-size="44" fill="#16243d">EZ</text>
-    <text x="60" y="93" text-anchor="middle" font-family="Arial" font-weight="700" font-size="13" letter-spacing="1.5" fill="#16243d">PLUMBING</text>
+  <symbol id="bllogo" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="55" fill="#ffffff" stroke="#0d3b8f" stroke-width="4"/>
+    <path d="M60 20 C60 20 39 47 39 64 a21 21 0 0 0 42 0 C81 47 60 20 60 20 Z" fill="#0d3b8f"/>
+    <path d="M50 66 q5 -6 10 0 t10 0" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="60" y="100" text-anchor="middle" font-family="Arial" font-weight="700" font-size="12" letter-spacing="1" fill="#0d3b8f">BLUELINE</text>
   </symbol>
 </svg>
 
@@ -198,7 +197,7 @@
 <div class="topbar">
   <div class="container">
     <div>⚠️ <b>24 HOUR EMERGENCY SERVICE</b> — We're open around the clock!</div>
-    <div>📞 Call us now: <a href="tel:+17808001001">(780) 800-1001</a></div>
+    <div>📞 Call us now: <a href="tel:+18254195570">(825) 419-5570</a></div>
   </div>
 </div>
 
@@ -206,13 +205,12 @@
 <header>
   <div class="container nav">
     <a href="#home" class="logo">
-      <svg><use href="#ezlogo"/></svg>
+      <svg><use href="#bllogo"/></svg>
       <div class="logo-text">
-        <div class="name">EZ Plumbing Inc.</div>
-        <div class="tag">PLUMBING &amp; HEATING • 24 HR SERVICE</div>
+        <div class="name">BlueLine Plumbing &amp; Heating</div>
+        <div class="tag">24 HR SERVICE • EDMONTON &amp; AREA</div>
       </div>
     </a>
-    <!-- NO Reviews link up here — only at the bottom -->
     <nav>
       <ul id="menu">
         <li><a href="#home">Home</a></li>
@@ -222,19 +220,19 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a href="tel:+17808001001" class="nav-call">📞 (780) 800-1001</a>
+    <a href="tel:+18254195570" class="nav-call">📞 (825) 419-5570</a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- HERO — badge & stats no longer mention reviews -->
+<!-- HERO — deep blue -->
 <section class="hero" id="home">
   <div class="container">
     <span class="hero-badge">🚨 OPEN 24 HOURS — Emergency Service</span>
     <h1>Edmonton's Trusted <span>24 Hour</span> Plumbing &amp; Heating Experts</h1>
-    <p>From hot water tank replacements to sump pumps and emergency repairs — EZ Plumbing Inc. is ready day or night. Fast, professional, and guaranteed service across Edmonton &amp; surrounding areas.</p>
+    <p>From hot water tank replacements to sump pumps and emergency repairs — BlueLine Plumbing &amp; Heating is ready day or night. Fast, professional, and guaranteed service across Edmonton &amp; surrounding areas.</p>
     <div class="hero-btns">
-      <a href="tel:+17808001001" class="btn btn-blue">📞 Call (780) 800-1001</a>
+      <a href="tel:+18254195570" class="btn btn-blue">📞 Call (825) 419-5570</a>
       <a href="#contact" class="btn btn-outline">Request a Quote</a>
     </div>
     <div class="hero-stats">
@@ -304,18 +302,18 @@
   <div class="container reveal">
     <h2>Plumbing Emergency? We're Open 24 Hours.</h2>
     <p>Don't wait — water damage gets worse by the minute. Our emergency team is standing by right now.</p>
-    <a href="tel:+17808001001" class="btn">📞 Call (780) 800-1001 Now</a>
+    <a href="tel:+18254195570" class="btn">📞 Call (825) 419-5570 Now</a>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="container about-wrap">
-    <div class="about-img reveal">🚚 EZ Plumbing &amp; Heating<br>24 HOUR SERVICE — ON THE ROAD<br>Edmonton, AB</div>
+    <div class="about-img reveal">🚚 BlueLine Plumbing &amp; Heating<br>24 HOUR SERVICE — ON THE ROAD<br>Edmonton, AB</div>
     <div class="reveal">
       <div class="kicker" style="color:var(--blue);font-weight:800;letter-spacing:2px;font-size:.8rem;">ABOUT US</div>
-      <h2 style="color:var(--navy);font-size:2rem;font-weight:900;margin:8px 0 14px;">The EZ Way to Fix Your Plumbing</h2>
-      <p style="color:var(--grey);">EZ Plumbing Inc. is a locally owned plumbing and heating company serving Edmonton and surrounding communities. Our reputation is built on fast response times, honest pricing, and quality workmanship — day or night.</p>
+      <h2 style="color:var(--navy);font-size:2rem;font-weight:900;margin:8px 0 14px;">The BlueLine Way to Fix Your Plumbing</h2>
+      <p style="color:var(--grey);">BlueLine Plumbing &amp; Heating is a locally owned plumbing and heating company serving Edmonton and surrounding communities. Our reputation is built on fast response times, honest pricing, and quality workmanship — day or night.</p>
       <ul class="checklist">
         <li>Open 24 hours, 7 days a week</li>
         <li>Experienced, licensed plumbers</li>
@@ -333,10 +331,10 @@
     <div class="sec-head reveal">
       <div class="kicker">Our Work</div>
       <h2>Photos &amp; Videos</h2>
-      <p>Our branded trucks, bathroom renovations, and jobs in progress.</p>
+      <p>Our service trucks, bathroom renovations, and jobs in progress.</p>
     </div>
     <div class="gal-grid">
-      <div class="gal-item g1 reveal">🚚 EZ Plumbing Truck<br><small style="font-weight:400;">(Replace with your truck photo)</small></div>
+      <div class="gal-item g1 reveal">🚚 Our Service Truck<br><small style="font-weight:400;">(Replace with your truck photo)</small></div>
       <div class="gal-item g2 reveal">🚿 Bathroom Install<br><small style="font-weight:400;">(Replace with bathroom photo)</small></div>
       <div class="gal-item g3 reveal">🛠️ Inside the Shop<br><small style="font-weight:400;">(Replace with inside photo)</small></div>
       <div class="gal-item g4 reveal">🔥 Heating Work<br><small style="font-weight:400;">(Replace with job site photo)</small></div>
@@ -356,11 +354,11 @@
       <div>
         <div class="info-box reveal">
           <div class="ico">📞</div>
-          <div><b>Phone — Open 24 Hours</b><a href="tel:+17808001001" style="color:var(--blue);font-weight:800;font-size:1.15rem;">(780) 800-1001</a></div>
+          <div><b>Phone — Open 24 Hours</b><a href="tel:+18254195570" style="color:var(--blue);font-weight:800;font-size:1.15rem;">(825) 419-5570</a></div>
         </div>
         <div class="info-box reveal">
           <div class="ico">📍</div>
-          <div><b>Service Area</b>Edmonton, AB &amp; surrounding areas<br><a href="https://www.google.com/maps/search/EZ+Plumbing+Inc.+Edmonton" target="_blank" style="color:var(--blue);font-weight:700;">View on Google Maps →</a></div>
+          <div><b>Service Area</b>Edmonton, AB &amp; surrounding areas<br><a href="https://www.google.com/maps/search/plumbing+Edmonton" target="_blank" style="color:var(--blue);font-weight:700;">View on Google Maps →</a></div>
         </div>
         <div class="info-box reveal">
           <div class="ico">⏰</div>
@@ -376,7 +374,7 @@
         </div>
         <div class="field">
           <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" placeholder="(780) 000-0000" required>
+          <input type="tel" id="phone" placeholder="(825) 000-0000" required>
         </div>
         <div class="field">
           <label for="service">Service Needed *</label>
@@ -402,18 +400,13 @@
   </div>
 </section>
 
-<!-- ============ REVIEWS — THE ONLY REVIEW SECTION, AT THE VERY BOTTOM ============ -->
+<!-- REVIEWS — ONLY AT THE BOTTOM -->
 <section class="reviews" id="reviews">
   <div class="container">
     <div class="sec-head reveal">
       <div class="kicker">Testimonials</div>
       <h2>What Our Customers Say</h2>
-      <p>Rated 4.6 out of 5 from 458 reviews on Google.</p>
-    </div>
-    <div class="rating-hero reveal">
-      <div class="big">4.6</div>
-      <div class="stars">★★★★★</div>
-      <p style="color:var(--grey);margin-top:6px;">Based on 458 Google reviews</p>
+      <p>Real feedback from real customers.</p>
     </div>
     <div class="grid-3 rev">
       <div class="card reveal">
@@ -432,7 +425,6 @@
         <div class="who"><div class="avatar">J</div><div><b>Jason B.</b><span>Sump Pump Replacement</span></div></div>
       </div>
     </div>
-    <p style="text-align:center;margin-top:30px;"><a href="https://www.google.com/maps" target="_blank" style="color:var(--blue);font-weight:700;">⭐ Read all 458 reviews on Google →</a></p>
   </div>
 </section>
 
@@ -441,10 +433,10 @@
   <div class="container foot-grid">
     <div>
       <div class="logo" style="margin-bottom:14px;">
-        <svg style="width:66px;height:66px;"><use href="#ezlogo"/></svg>
-        <div class="logo-text"><div class="name">EZ Plumbing Inc.</div><div class="tag">PLUMBING &amp; HEATING</div></div>
+        <svg style="width:66px;height:66px;"><use href="#bllogo"/></svg>
+        <div class="logo-text"><div class="name">BlueLine Plumbing &amp; Heating</div><div class="tag">24 HR SERVICE</div></div>
       </div>
-      <p>24 hour plumbing &amp; heating service in Edmonton &amp; surrounding areas.</p>
+      <p>24 hour plumbing &amp; heating service in Edmonton &amp; surrounding areas. Fast, honest, and professional — day or night.</p>
     </div>
     <div>
       <h4>Services</h4>
@@ -468,17 +460,17 @@
     <div>
       <h4>Contact</h4>
       <ul>
-        <li>📞 <a href="tel:+17808001001">(780) 800-1001</a></li>
+        <li>📞 <a href="tel:+18254195570">(825) 419-5570</a></li>
         <li>⏰ Open 24 Hours</li>
         <li>📍 Edmonton, Alberta</li>
       </ul>
     </div>
   </div>
-  <div class="foot-bottom">© <span id="year"></span> EZ Plumbing Inc. — All Rights Reserved. | Plumbing &amp; Heating | 24 Hour Service</div>
+  <div class="foot-bottom">© <span id="year"></span> BlueLine Plumbing &amp; Heating — All Rights Reserved. | Plumbing &amp; Heating | 24 Hour Service</div>
 </footer>
 
 <!-- FLOATING CALL BUTTON -->
-<a href="tel:+17808001001" class="float-call" aria-label="Call EZ Plumbing">📞</a>
+<a href="tel:+18254195570" class="float-call" aria-label="Call BlueLine Plumbing">📞</a>
 
 <script>
 /* ===== MOBILE MENU ===== */
@@ -512,7 +504,7 @@ document.getElementById('quoteForm').addEventListener('submit', function(e){
     msg.className='form-msg err'; msg.textContent='Please select a service.'; return;
   }
   msg.className='form-msg ok';
-  msg.textContent='✅ Thanks '+name+'! Your request was received. For emergencies, call (780) 800-1001.';
+  msg.textContent='✅ Thanks '+name+'! Your request was received. For emergencies, call (825) 419-5570.';
   this.reset();
 });
 
@@ -520,4 +512,4 @@ document.getElementById('quoteForm').addEventListener('submit', function(e){
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
-</html>
+</html>t
