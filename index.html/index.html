@@ -198,6 +198,7 @@ table.vt{width:100%;border-collapse:collapse;font-size:14px;background:#fff;bord
 
    SETTINGS YOU MAY EDIT:
    - Volunteer password: see VOLUNTEER_PASSWORD below.
+   - Locker numbers: students register a locker from 1 to MAX_LOCKER.
    - If the month-end lands on a weekend, tasks reset on the next
      school day (Monday). Set WEEKEND_SHIFT to "previous" instead
      if you prefer the Friday before.
@@ -206,6 +207,7 @@ table.vt{width:100%;border-collapse:collapse;font-size:14px;background:#fff;bord
 /* ---------- settings ---------- */
 var VOLUNTEER_PASSWORD = "Siham$muna2";   // <- volunteer panel password (fixed)
 var WEEKEND_SHIFT = "next";               // "next" = Saturday/Sunday moves to Monday, "previous" = moves to Friday
+var MAX_LOCKER = 1700;                    // students can register lockers 1 .. MAX_LOCKER only
 
 var POINTS = { claim: 12, story: 2, fact: 2, riddle: 2, feedback: 2 };
 var VOUCHER_AT = 50;
@@ -320,6 +322,7 @@ en: {
   "volunteerDesc":"For distribution volunteers managing letters and rewards.",
   "continue":"Continue","back":"Back","login":"Log in","signup":"First time? Sign up",
   "locker":"Locker number","lockerPh":"e.g. 42","name":"Your name","namePh":"e.g. Amina",
+  "choosePw":"Create a password","pwPh":"At least 4 characters","lockerHint":"Allowed locker numbers: 1 to 1700","errorPw":"Password must be at least 4 characters.","errorLockerRange":"Locker number must be between 1 and 1700.","errorWrongPw":"Wrong password for this locker. Ask a volunteer if you forgot it.","errorNeedPw":"Please enter your password.","show":"Show","hide":"Hide",
   "chooseLangTitle":"Choose your preferred language",
   "chooseLangSub":"The app, stories, facts and riddles will be shown in this language. You can change it anytime.",
   "searchLang":"Search languages...",
@@ -393,6 +396,7 @@ es: {
   "volunteerDesc":"Para voluntarios que gestionan cartas y premios.",
   "continue":"Continuar","back":"Volver","login":"Iniciar sesión","signup":"¿Primera vez? Regístrate",
   "locker":"Número de casilla","lockerPh":"p. ej. 42","name":"Tu nombre","namePh":"p. ej. Amina",
+  "choosePw":"Crea una contraseña","pwPh":"Mínimo 4 caracteres","lockerHint":"Números de casilla permitidos: del 1 al 1700","errorPw":"La contraseña debe tener al menos 4 caracteres.","errorLockerRange":"El número de casilla debe estar entre 1 y 1700.","errorWrongPw":"Contraseña incorrecta para esta casilla. Si la olvidaste, pide ayuda a un voluntario.","errorNeedPw":"Escribe tu contraseña.","show":"Mostrar","hide":"Ocultar",
   "chooseLangTitle":"Elige tu idioma preferido",
   "chooseLangSub":"La app, las historias, los datos y las adivinanzas se mostrarán en este idioma. Puedes cambiarlo cuando quieras.",
   "searchLang":"Buscar idiomas...",
@@ -457,6 +461,7 @@ fr: {
   "volunteerDesc":"Pour les bénévoles qui gèrent les lettres et les récompenses.",
   "continue":"Continuer","back":"Retour","login":"Se connecter","signup":"Première visite ? Inscris-toi",
   "locker":"Numéro de casier","lockerPh":"ex. 42","name":"Ton prénom","namePh":"ex. Amina",
+  "choosePw":"Crée un mot de passe","pwPh":"Au moins 4 caractères","lockerHint":"Numéros de casier autorisés : de 1 à 1700","errorPw":"Le mot de passe doit contenir au moins 4 caractères.","errorLockerRange":"Le numéro de casier doit être entre 1 et 1700.","errorWrongPw":"Mot de passe incorrect pour ce casier. Demande à un bénévole si tu l'as oublié.","errorNeedPw":"Tape ton mot de passe.","show":"Afficher","hide":"Masquer",
   "chooseLangTitle":"Choisis ta langue préférée",
   "chooseLangSub":"L'appli, les histoires, les anecdotes et les énigmes s'afficheront dans cette langue. Tu pourras la changer à tout moment.",
   "searchLang":"Rechercher une langue...",
@@ -521,6 +526,7 @@ de: {
   "volunteerDesc":"Für Betreuer, die Briefe und Belohnungen verwalten.",
   "continue":"Weiter","back":"Zurück","login":"Anmelden","signup":"Erstes Mal? Registrieren",
   "locker":"Schließfachnummer","lockerPh":"z. B. 42","name":"Dein Name","namePh":"z. B. Amina",
+  "choosePw":"Erstelle ein Passwort","pwPh":"Mindestens 4 Zeichen","lockerHint":"Erlaubte Fachnummern: 1 bis 1700","errorPw":"Das Passwort muss mindestens 4 Zeichen haben.","errorLockerRange":"Die Schließfachnummer muss zwischen 1 und 1700 liegen.","errorWrongPw":"Falsches Passwort für dieses Fach. Frag eine Betreuungsperson, wenn du es vergessen hast.","errorNeedPw":"Bitte gib dein Passwort ein.","show":"Anzeigen","hide":"Verbergen",
   "chooseLangTitle":"Wähle deine Sprache",
   "chooseLangSub":"App, Geschichten, Fakten und Rätsel erscheinen in dieser Sprache. Du kannst sie jederzeit ändern.",
   "searchLang":"Sprache suchen...",
@@ -585,6 +591,7 @@ pt: {
   "volunteerDesc":"Para voluntários que organizam as cartas e os prêmios.",
   "continue":"Continuar","back":"Voltar","login":"Entrar","signup":"Primeira vez? Cadastre-se",
   "locker":"Número do armário","lockerPh":"ex.: 42","name":"Seu nome","namePh":"ex.: Amina",
+  "choosePw":"Crie uma senha","pwPh":"Pelo menos 4 caracteres","lockerHint":"Números de armário permitidos: 1 a 1700","errorPw":"A senha deve ter pelo menos 4 caracteres.","errorLockerRange":"O número do armário deve estar entre 1 e 1700.","errorWrongPw":"Senha incorreta para este armário. Se esqueceu, peça ajuda a um voluntário.","errorNeedPw":"Digite sua senha.","show":"Mostrar","hide":"Ocultar",
   "chooseLangTitle":"Escolha seu idioma preferido",
   "chooseLangSub":"O app, as histórias, os fatos e as charadas aparecerão neste idioma. Você pode mudar quando quiser.",
   "searchLang":"Buscar idiomas...",
@@ -649,6 +656,7 @@ ru: {
   "volunteerDesc":"Для волонтёров, которые готовят письма и награды.",
   "continue":"Продолжить","back":"Назад","login":"Войти","signup":"Первый раз? Регистрация",
   "locker":"Номер шкафчика","lockerPh":"напр. 42","name":"Ваше имя","namePh":"напр. Амина",
+  "choosePw":"Придумайте пароль","pwPh":"Минимум 4 символа","lockerHint":"Разрешённые номера шкафчиков: от 1 до 1700","errorPw":"Пароль должен быть не короче 4 символов.","errorLockerRange":"Номер шкафчика должен быть от 1 до 1700.","errorWrongPw":"Неверный пароль для этого шкафчика. Если забыли — обратитесь к волонтёру.","errorNeedPw":"Введите пароль.","show":"Показать","hide":"Скрыть",
   "chooseLangTitle":"Выберите предпочитаемый язык",
   "chooseLangSub":"Приложение, истории, факты и загадки будут на этом языке. Его можно изменить в любой момент.",
   "searchLang":"Найти язык...",
@@ -713,6 +721,7 @@ ar: {
   "volunteerDesc":"للمتطوعين الذين يوزّعون الرسائل والجوائز.",
   "continue":"متابعة","back":"رجوع","login":"تسجيل الدخول","signup":"أول مرة؟ أنشئ حسابًا",
   "locker":"رقم الخزانة","lockerPh":"مثال: 42","name":"اسمك","namePh":"مثال: أمينة",
+  "choosePw":"أنشئ كلمة المرور","pwPh":"4 أحرف على الأقل","lockerHint":"أرقام الخزائن المسموحة: من 1 إلى 1700","errorPw":"يجب أن تكون كلمة المرور 4 أحرف على الأقل.","errorLockerRange":"يجب أن يكون رقم الخزانة بين 1 و1700.","errorWrongPw":"كلمة المرور غير صحيحة لهذه الخزانة. إذا نسيتها فاطلب المساعدة من متطوع.","errorNeedPw":"أدخل كلمة المرور.","show":"إظهار","hide":"إخفاء",
   "chooseLangTitle":"اختر لغتك المفضلة",
   "chooseLangSub":"ستظهر الواجهة والقصص والمعلومات والألغاز بهذه اللغة. يمكنك تغييرها في أي وقت.",
   "searchLang":"ابحث عن لغة...",
@@ -777,6 +786,7 @@ ur: {
   "volunteerDesc":"ان وائرنٹیز کے لیے جو خط اور انعامات سنبھالتے ہیں۔",
   "continue":"جاری رکھیں","back":"واپس","login":"لاگ اِن","signup":"پہلی بار؟ سائن اپ",
   "locker":"لاکر نمبر","lockerPh":"مثلاً 42","name":"آپ کا نام","namePh":"مثلاً امینہ",
+  "choosePw":"اپنا پاس ورڈ بنائیں","pwPh":"کم از کم 4 حروف","lockerHint":"مجاز لاکر نمبر: 1 سے 1700","errorPw":"پاس ورڈ کم از کم 4 حروف کا ہونا چاہیے۔","errorLockerRange":"لاکر نمبر 1 سے 1700 کے درمیان ہونا چاہیے۔","errorWrongPw":"اس لاکر کا پاس ورڈ غلط ہے۔ اگر بھول گئے ہیں تو رضاکار سے مدد لیں۔","errorNeedPw":"براہ کرم اپنا پاس ورڈ لکھیں۔","show":"دکھائیں","hide":"چھپائیں",
   "chooseLangTitle":"اپنی پسندیدہ زبان منتخب کریں",
   "chooseLangSub":"ایپ، کہانیاں، معلومات اور پہیلیاں اسی زبان میں دکھائی جائیں گی۔ آپ کبھی بھی تبدیل کر سکتے ہیں۔",
   "searchLang":"زبان تلاش کریں...",
@@ -841,6 +851,7 @@ hi: {
   "volunteerDesc":"पत्र और इनाम संभालने वाले वॉलंटियर के लिए।",
   "continue":"जारी रखें","back":"पीछे","login":"लॉग इन","signup":"पहली बार? साइन अप",
   "locker":"लॉकर नंबर","lockerPh":"जैसे 42","name":"आपका नाम","namePh":"जैसे आमिना",
+  "choosePw":"अपना पासवर्ड बनाएँ","pwPh":"कम से कम 4 अक्षर","lockerHint":"मान्य लॉकर नंबर: 1 से 1700","errorPw":"पासवर्ड कम से कम 4 अक्षर का होना चाहिए।","errorLockerRange":"लॉकर नंबर 1 से 1700 के बीच होना चाहिए।","errorWrongPw":"इस लॉकर का पासवर्ड गलत है। भूल गए तो स्वयंसेवक से मदद लें।","errorNeedPw":"कृपया अपना पासवर्ड लिखें।","show":"दिखाएँ","hide":"छिपाएँ",
   "chooseLangTitle":"अपनी पसंदीदा भाषा चुनें",
   "chooseLangSub":"ऐप, कहानियाँ, तथ्य और पहेलियाँ इसी भाषा में दिखेंगी। आप कभी भी बदल सकते हैं।",
   "searchLang":"भाषा खोजें...",
@@ -905,6 +916,7 @@ bn: {
   "volunteerDesc":"চিঠি ও পুরস্কার সামলানো ভলান্টিয়ারদের জন্য।",
   "continue":"চালিয়ে যাও","back":"পেছনে","login":"লগ ইন","signup":"প্রথমবার? সাইন আপ",
   "locker":"লকার নম্বর","lockerPh":"যেমন 42","name":"তোমার নাম","namePh":"যেমন আমিনা",
+  "choosePw":"একটি পাসওয়ার্ড তৈরি করো","pwPh":"কমপক্ষে ৪ অক্ষর","lockerHint":"অনুমোদিত লকার নম্বর: ১ থেকে ১৭০০","errorPw":"পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে।","errorLockerRange":"লকার নম্বর ১ থেকে ১৭০০ এর মধ্যে হতে হবে।","errorWrongPw":"এই লকারের পাসওয়ার্ড ভুল। ভুলে গেলে স্বেচ্ছাসেবকের কাছে সাহায্য নাও।","errorNeedPw":"তোমার পাসওয়ার্ড লেখো।","show":"দেখাও","hide":"লুকাও",
   "chooseLangTitle":"তোমার পছন্দের ভাষা বাছো",
   "chooseLangSub":"অ্যাপ, গল্প, তথ্য ও ধাঁধা এই ভাষায় দেখাবে। যখন খুশি বদলাতে পারবে।",
   "searchLang":"ভাষা খোঁজো...",
@@ -969,6 +981,7 @@ zh: {
   "volunteerDesc":"给负责分发信件和奖励的志愿者使用。",
   "continue":"继续","back":"返回","login":"登录","signup":"第一次？注册",
   "locker":"柜号","lockerPh":"例如 42","name":"你的名字","namePh":"例如 阿米娜",
+  "choosePw":"创建一个密码","pwPh":"至少 4 个字符","lockerHint":"可用的柜号：1 到 1700","errorPw":"密码至少需要 4 个字符。","errorLockerRange":"柜号必须在 1 到 1700 之间。","errorWrongPw":"这个柜号的密码不正确。如果忘记密码，请找志愿者帮忙。","errorNeedPw":"请输入密码。","show":"显示","hide":"隐藏",
   "chooseLangTitle":"选择你的首选语言",
   "chooseLangSub":"界面、故事、趣闻和谜语都会用这种语言显示，随时可以更改。",
   "searchLang":"搜索语言...",
@@ -1033,6 +1046,7 @@ ja: {
   "volunteerDesc":"手紙とご褒美を管理するボランティア向けです。",
   "continue":"つぎへ","back":"もどる","login":"ログイン","signup":"はじめての方は新規登録",
   "locker":"ロッカー番号","lockerPh":"例: 42","name":"名前","namePh":"例: アミナ",
+  "choosePw":"パスワードを決めよう","pwPh":"4文字以上","lockerHint":"使えるロッカー番号：1〜1700","errorPw":"パスワードは4文字以上にしてください。","errorLockerRange":"ロッカー番号は1〜1700の範囲で入力してください。","errorWrongPw":"このロッカーのパスワードがちがいます。わからなくなったらボランティアに聞いてね。","errorNeedPw":"パスワードを入力してください。","show":"表示","hide":"隠す",
   "chooseLangTitle":"好きな言語を選んでください",
   "chooseLangSub":"アプリの表示、ストーリー、トリビア、なぞなぞがこの言語で表示されます。いつでも変えられます。",
   "searchLang":"言語をさがす...",
@@ -1191,6 +1205,8 @@ var riddleRun = null;   // active riddle attempt
 var fbStars = 0;        // selected feedback stars
 var draft = { q1: "", q2: "", review: "" };
 var toastTimer = null;
+var pwShown = {};   // volunteer panel: which student passwords are revealed
+var vIdx = [];      // volunteer panel: locker keys by table row index
 
 /* ---------- safe storage ------------------------------------
    Some preview panes and privacy modes BLOCK localStorage.
@@ -1231,6 +1247,23 @@ function setSession(s){
 function stu(){
   return (session && session.role === "student") ? DB.students[session.locker] : null;
 }
+
+/* ---------- locker + password helpers ---------- */
+function normLocker(raw){
+  var s = (raw === null || raw === undefined ? "" : String(raw)).trim();
+  if (!/^\d{1,4}$/.test(s)) return null;
+  var n = parseInt(s, 10);
+  if (n < 1 || n > MAX_LOCKER) return null;
+  return String(n);
+}
+function findLocker(raw){
+  var s = (raw === null || raw === undefined ? "" : String(raw)).trim();
+  if (s && DB.students[s]) return s; /* legacy free-form locker keys still log in */
+  var n = normLocker(s);
+  return (n && DB.students[n]) ? n : null;
+}
+function encPw(p){ try { return btoa(unescape(encodeURIComponent(p))); } catch (e) { return p; } }
+function decPw(h){ if (!h) return ""; try { return decodeURIComponent(escape(atob(h))); } catch (e) { return h; } }
 
 /* ---------- i18n ---------- */
 function t(k){
@@ -1341,7 +1374,7 @@ function viewLanding(){
   );
 }
 function startStudentAuth(){
-  auth = { mode: "login", step: 1, locker: "", name: "", lang: null, search: "" };
+  auth = { mode: "login", step: 1, locker: "", name: "", pw: "", lang: null, search: "" };
   viewStudentAuth();
 }
 function startVolunteerAuth(){ viewVolunteerAuth(); }
@@ -1356,12 +1389,18 @@ function viewStudentAuth(){
   if (mode === "login"){
     body = "<label class='qlbl'>" + esc(t("locker")) + "</label>" +
       "<input class='in' id='lockIn' placeholder='" + esc(t("lockerPh")) + "' onkeydown='onEnt(event,doLogin)'>" +
-      "<div class='btnrow'><button class='btn primary' onclick='doLogin()'>" + esc(t("login")) + "</button></div>";
+      "<label class='qlbl'>" + esc(t("password")) + "</label>" +
+      "<input class='in' type='password' id='lPwIn' placeholder='" + esc(t("pwPh")) + "' onkeydown='onEnt(event,doLogin)'>" +
+      "<div class='btnrow'><button class='btn ghost' onclick='viewLanding()'>" + esc(t("back")) + "</button>" +
+      "<button class='btn primary' onclick='doLogin()'>" + esc(t("login")) + "</button></div>";
   } else {
     body = "<label class='qlbl'>" + esc(t("locker")) + "</label>" +
       "<input class='in' id='lockIn' placeholder='" + esc(t("lockerPh")) + "'>" +
+      "<p class='muted' style='font-size:12px;margin:4px 0 0'>" + esc(t("lockerHint")) + "</p>" +
       "<label class='qlbl'>" + esc(t("name")) + "</label>" +
       "<input class='in' id='nameIn' placeholder='" + esc(t("namePh")) + "' onkeydown='onEnt(event,doSignupStep1)'>" +
+      "<label class='qlbl'>" + esc(t("choosePw")) + "</label>" +
+      "<input class='in' type='password' id='spwIn' placeholder='" + esc(t("pwPh")) + "' onkeydown='onEnt(event,doSignupStep1)'>" +
       "<div class='btnrow'><button class='btn ghost' onclick='viewLanding()'>" + esc(t("back")) + "</button>" +
       "<button class='btn primary' onclick='doSignupStep1()'>" + esc(t("continue")) + "</button></div>";
   }
@@ -1371,21 +1410,35 @@ function viewStudentAuth(){
     "<div class='foot'>" + esc(t("localNote")) + "</div></div>");
 }
 function doLogin(){
-  var lk = (document.getElementById("lockIn").value || "").trim();
-  if (!lk){ toast(t("errorLocker")); return; }
-  if (!DB.students[lk]){ toast(t("errorNotFound")); return; }
+  var raw = (document.getElementById("lockIn").value || "").trim();
+  var pw = (document.getElementById("lPwIn") ? document.getElementById("lPwIn").value : "");
+  if (!raw){ toast(t("errorLocker")); return; }
+  if (!pw){ toast(t("errorNeedPw")); return; }
+  var lk = findLocker(raw);
+  if (!lk){ toast(t("errorNotFound")); return; }
+  var st = DB.students[lk];
+  if (st.pw){
+    if (decPw(st.pw) !== pw){ toast(t("errorWrongPw")); return; }
+  } else {
+    st.pw = encPw(pw); /* account made before passwords existed: this login sets it */
+  }
+  save();
   setSession({ role: "student", locker: lk });
   riddleRun = null; fbStars = 0;
   render();
-  toast(t("welcomeBack") + ", " + DB.students[lk].name + "!");
+  toast(t("welcomeBack") + ", " + st.name + "!");
 }
 function doSignupStep1(){
-  var lk = (document.getElementById("lockIn").value || "").trim();
+  var raw = (document.getElementById("lockIn").value || "").trim();
   var nm = (document.getElementById("nameIn").value || "").trim();
-  if (!lk){ toast(t("errorLocker")); return; }
+  var pw = (document.getElementById("spwIn") ? document.getElementById("spwIn").value : "");
+  if (!raw){ toast(t("errorLocker")); return; }
+  var lk = normLocker(raw);
+  if (!lk){ toast(t("errorLockerRange")); return; }
   if (DB.students[lk]){ toast(t("errorTaken")); return; }
   if (!nm){ toast(t("errorName")); return; }
-  auth.locker = lk; auth.name = nm; auth.step = 2;
+  if (pw.length < 4){ toast(t("errorPw")); return; }
+  auth.locker = lk; auth.name = nm; auth.pw = pw; auth.step = 2;
   viewLangPick();
 }
 function viewLangPick(){
@@ -1412,7 +1465,7 @@ function authBack(){ auth.step = 1; viewStudentAuth(); }
 function doSignup(){
   if (!auth.lang){ toast(t("errorPickLang")); return; }
   DB.students[auth.locker] = {
-    locker: auth.locker, name: auth.name, lang: auth.lang,
+    locker: auth.locker, name: auth.name, lang: auth.lang, pw: encPw(auth.pw),
     points: 0, cycles: {}, riddleLockedUntil: 0,
     vouchers: [], certs: [],
     createdAt: Date.now(), updatedOn: null
@@ -1628,11 +1681,16 @@ function viewVolunteer(){
     "<div class='stat'><b>" + DB.shoutouts.length + "</b><span>" + esc(t("vStatShoutouts")) + "</span></div></div>";
 
   html += "<div class='stitle'>" + esc(t("vTable")) + "</div><div class='vwrap'><table class='vt'><thead><tr>" +
-    "<th>" + esc(t("vLocker")) + "</th><th>" + esc(t("vName")) + "</th><th>" + esc(t("vLang")) + "</th><th>" + esc(t("vPoints")) + "</th><th>" + esc(t("vCycleTasks")) + "</th><th>" + esc(t("vLastActive")) + "</th></tr></thead><tbody>";
-  if (!studs.length) html += "<tr><td colspan='6' class='muted'>" + esc(t("vNoStudents")) + "</td></tr>";
+    "<th>" + esc(t("vLocker")) + "</th><th>" + esc(t("vName")) + "</th><th>" + esc(t("vLang")) + "</th><th>" + esc(t("vPoints")) + "</th><th>" + esc(t("vCycleTasks")) + "</th><th>" + esc(t("vLastActive")) + "</th><th>" + esc(t("password")) + "</th></tr></thead><tbody>";
+  if (!studs.length) html += "<tr><td colspan='7' class='muted'>" + esc(t("vNoStudents")) + "</td></tr>";
+  vIdx = [];
   for (var j = 0; j < studs.length; j++){
     var s = studs[j];
-    html += "<tr><td><b>" + esc(s.locker) + "</b></td><td>" + esc(s.name) + "</td><td>" + esc(langNative(s.lang)) + "</td><td><b>" + s.points + "</b></td><td>" + doneCount(s, ck) + "/5</td><td class='muted'>" + (s.updatedOn ? rel(s.updatedOn) : esc(t("vNever"))) + "</td></tr>";
+    vIdx[j] = s.locker;
+    var pwCell = !s.pw ? "<span class='muted'>&mdash;</span>"
+      : "<span class='pwv'>" + (pwShown[s.locker] ? esc(decPw(s.pw)) : "&bull;&bull;&bull;&bull;") + "</span>" +
+        "<button class='btn ghost sm' style='margin-left:6px' onclick='togglePw(" + j + ")'>" + esc(pwShown[s.locker] ? t("hide") : t("show")) + "</button>";
+    html += "<tr><td><b>" + esc(s.locker) + "</b></td><td>" + esc(s.name) + "</td><td>" + esc(langNative(s.lang)) + "</td><td><b>" + s.points + "</b></td><td>" + doneCount(s, ck) + "/5</td><td class='muted'>" + (s.updatedOn ? rel(s.updatedOn) : esc(t("vNever"))) + "</td><td>" + pwCell + "</td></tr>";
   }
   html += "</tbody></table></div>";
 
@@ -1661,6 +1719,12 @@ function armReset(){
     "<button class='btn ghost sm' onclick='cancelReset()'>" + esc(t("vNo")) + "</button>";
 }
 function cancelReset(){ render(); }
+function togglePw(i){
+  var lk = vIdx[i];
+  if (!lk) return;
+  pwShown[lk] = !pwShown[lk];
+  render();
+}
 function doReset(){
   DB = { students: {}, reviews: [], shoutouts: [] };
   save();
